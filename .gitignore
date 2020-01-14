@@ -40,3 +40,7 @@ htmlcov/
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+
+#vim files
+*.swp
+*.swo
