@@ -38,9 +38,8 @@ class GoogleCalendar:
                 pickle.dump(self.creds, token)
 
     def _events(self):
+        """ Calendar API """
         service = build('calendar', 'v3', credentials=self.creds)
-
-        # Call the Calendar API
         now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
         events_result = service.events().list(
             calendarId='primary', 
@@ -52,8 +51,19 @@ class GoogleCalendar:
         events = events_result.get('items', [])
         return events
 
+    def _calendar_list(self):
+        """ CalendarList API """
+        service = build('calendar', 'v3', credentials=self.creds)
+        result = service.calendarList().list().execute()
+        calendar_list = result.get('items', [])
+        return calendar_list
+
     def get_events(self):
         self._validate()
         events = self._events()
         return events
 
+    def get_calendar_list(self):
+        self._validate()
+        calendar_list = self._calendar_list()
+        return calendar_list

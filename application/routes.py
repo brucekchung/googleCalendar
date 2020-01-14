@@ -22,4 +22,12 @@ def events():
     return jsonify({ 'data': events })
 
 
-# result = service.calendarList().list().execute()
+@app.route('/calendar-list')
+def calendar_list():
+    controller = GoogleCalendar()
+    calendar_list = controller.get_calendar_list()
+
+    if not calendar_list:
+        return jsonify({ 'data': 'no list' })
+
+    return jsonify({ 'data': calendar_list })
