@@ -7,4 +7,3 @@ def test():
     """ test route """
     print('TEST ROUTE')
     return jsonify({ 'data': 'stuff' })
-

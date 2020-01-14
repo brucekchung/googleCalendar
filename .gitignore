@@ -1,6 +1,7 @@
 /* from https://github.com/pallets/flask/blob/master/.gitignore */
 
-
+#secret files
+credentials.json
 
 .DS_Store
 .env
