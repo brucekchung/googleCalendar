@@ -47,3 +47,4 @@ pip-selfcheck.json
 *.swo
 
 node_modules
+token.pickle
