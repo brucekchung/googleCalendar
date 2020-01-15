@@ -47,3 +47,5 @@ pip-selfcheck.json
 *.swo
 
 node_modules
+token.pickle
+package-lock.json

@@ -1,7 +1,10 @@
 from __future__ import print_function
+from flask_cors import CORS
 from . import app
 from flask import jsonify, render_template
 from .controllers import GoogleCalendar
+
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 
 @app.route('/')
