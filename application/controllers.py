@@ -20,9 +20,10 @@ class GoogleCalendar:
         self.creds = None
 
     def _validate(self):
-        # The file token.pickle stores the user's access and refresh tokens, and is
-        # created automatically when the authorization flow completes for the first
-        # time.
+        """The file token.pickle stores the user's access and refresh tokens, and is
+        created automatically when the authorization flow completes for the first
+        time.
+        """
         if os.path.exists('token.pickle'):
             with open('token.pickle', 'rb') as token:
                 self.creds = pickle.load(token)
