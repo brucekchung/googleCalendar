@@ -1,18 +1,18 @@
 from __future__ import print_function
 from . import app
-from flask import jsonify
+from flask import jsonify, render_template
 from .controllers import GoogleCalendar
 
 
 @app.route('/')
-@app.route('/test')
-def test():
-    """ test route """
-    return jsonify({ 'data': 'test route' })
+def view():
+    """ Render view """
+    return render_template('layout.html') 
 
 
 @app.route('/events')
 def events():
+    """ events from Calendar api """
     controller = GoogleCalendar()
     events = controller.get_events()
 
@@ -24,6 +24,7 @@ def events():
 
 @app.route('/calendar-list')
 def calendar_list():
+    """ calendars from CalendarList api """
     controller = GoogleCalendar()
     calendar_list = controller.get_calendar_list()
 

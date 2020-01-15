@@ -45,3 +45,5 @@ pip-selfcheck.json
 #vim files
 *.swp
 *.swo
+
+node_modules
